@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<title>Mean application</title>
+	<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		h1{
+			border-bottom: 1px solid orange;
+		}
+		 .PopUpMessage{
+            position: absolute;
+            top:50%;
+            left:40%;
+			width:20%;
+			height: 20%;
+			background: #e4e4e4;
+        }
+        .PopUpMessage div{
+			text-align: center;
+        }
+		.PopUpMessage div p{
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body ng-controller="EmployeeListController">
+	<div class="container">
+		<h1>Employee Add Application</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>EmpName</th>
+					<th>EmpId</th>
+					<th>Company</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" class="form-control" placeholder="Name" ng-model="employee.username"></td>
+					<td><input type="text" class="form-control" placeholder="Email" ng-model="employee.email"></td>
+					<td><input type="tel" class="form-control" placeholder="Phone number" ng-model="employee.phone"></td>
+					<td><button ng-click="addContact()" type="button" class="btn btn-primary">SignUp</button></td>
+					<!--<td><button ng-click="updateEmployee(updateId)" type="button" class="btn btn-info">Update</button></td>
+					<td><button ng-click="clearTextFields()" type="button" class="btn btn-success">Clear</button></td>-->
+				</tr>
+				<tr>
+					<td><input type="text" class="form-control" placeholder="Name" ng-model="loginUser"></td>
+					<td><button ng-click="removeEmployee(loginUser)" type="button" class="btn btn-primary">Login</button></td>
+				</tr>
+			</tbody>
+    	</table>
+	</div>
+	<div class="PopUpMessage" ng-if="messageDisplay">
+        <div><p>{{message}}</p></div>
+    </div>
+</body>
+<script type="text/javascript" src="vendor/requirejs/require.js" data-main="src/client/main"></script>
+</html>
