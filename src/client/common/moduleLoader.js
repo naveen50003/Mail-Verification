@@ -1,6 +1,6 @@
 define([
 	'angular',
-	'common/factories/CommonFactory'
+	'common/factories/commonFactory'
 ],function(angular){
 	'use strict';
 })
